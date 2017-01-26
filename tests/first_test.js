@@ -1,6 +1,6 @@
 this.toDos = function(browser) {
       browser
-      .url('http://www.whatsmyip.org/')
+      .url('http://crossbrowsertesting.github.io/todo-app.html')
       .useXpath()
       .click('/html/body/div/div/div/ul/li[4]/input')
       .click('/html/body/div/div/div/ul/li[5]/input')
