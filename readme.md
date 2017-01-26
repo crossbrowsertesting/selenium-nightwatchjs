@@ -9,7 +9,6 @@ From there, we'll need to install Nightwatch as well as [cbt_tunnels](https://gi
 ```
 user$ npm install nightwatch
 user$ npm install cbt_tunnels
-
 ```
 
 Next, we need to create JSON object that Nightwatch will point to when deciding how to configure the environment we'll be testing on. In our case, we'll be setting it up to test in CBT's cloud. Create a file called 'nightwatch.json', and copy to following environment configuration therein:
@@ -63,7 +62,6 @@ Next, we need to create JSON object that Nightwatch will point to when deciding 
     }
   }
 }
-
 
 ```
 
