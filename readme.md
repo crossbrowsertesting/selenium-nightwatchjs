@@ -92,7 +92,7 @@ Back up to 'tests' parent directory, and run the following command:
 
 `user$ nightwatch`
 
-Head over to CBT's dashboard, and you should see a test starting up on a Windows 7x64 / Internet Explorer 10 configuration. We can start adding more tests to tests to the 'tests' directory, and Nightwatch will take care of the rest. Be sure to have a look at [Nightwatch's API](http://nightwatchjs.org/api) to ensure you're making use of their best practices. If at any point, you have trouble getting your tests running with us, don't hesitate to get in touch. We're always happy to help. 
+Head over to CBT's dashboard, and you should see a test starting up on a Windows 7x64 / Internet Explorer 10 configuration. We can start adding more tests to tests to the 'tests' directory, and Nightwatch will take care of the rest. Be sure to have a look at [Nightwatch's API](http://nightwatchjs.org/api) to ensure you're making use of their best practices. If at any point, you have trouble getting your tests running with us, don't hesitate to [get in touch](mailto: support@crossbrowsertesting.com). We're always happy to help. 
 
 ##Local Connection Usage
 
