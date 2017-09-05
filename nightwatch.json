@@ -32,13 +32,12 @@
       "access_key": "<your_auth_key>",
       "desiredCapabilities": {
         "acceptSslCerts": "1",
-        "browserName": "internet explorer",
-        "browser_api_name": "IE10",
+        "browserName": "Internet Explorer",
+        "version": "10",
         "build": "1.0",
         "javascriptEnabled": "1",
         "name": "NightwatchJSExample",
-        "os_api_name" : "Win7x64-C2",
-        "platform": "ANY",
+        "platform" : "Windows 7 64-bit",
         "record_network" : "true",
         "record_video" : "true",
         "screen_resolution" : "1024x768"
