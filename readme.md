@@ -8,6 +8,8 @@
   * [Parallel Browsers](#parallel-browsers)
   * [Parallel Test Files](#parallel-test-files)
 
+## Introduction
+
 [Nightwatch.JS](http://nightwatchjs.org/) provides a powerful commandline tool that allows you to run end-to-end [Selenium](http://www.seleniumhq.org/) tests with Javascripts language bindings, all the while avoiding asynchronous commands and racing conditions. To get started, you'll need NPM. It comes with Node, and you can find setup instructions for the [whole package here](https://nodejs.org/en/). Once you have NPM, create a directory where you'd like your test projects to be stored. Navigate to that directory. From there, we'll initialize it as a Node Package by using the following:
 
 `user$ npm init`
@@ -18,6 +20,8 @@ From there, we'll need to install Nightwatch as well as [cbt_tunnels](https://gi
 user$ npm install nightwatch
 user$ npm install cbt_tunnels
 ```
+
+## Configuration
 
 Next, we need to create JSON object that Nightwatch will point to when deciding how to configure the environment we'll be testing on. In our case, we'll be setting it up to test in CBT's cloud. Create a file called 'nightwatch.json', and copy to following environment configuration therein:
 
@@ -73,6 +77,8 @@ Next, we need to create JSON object that Nightwatch will point to when deciding 
 ```
 
 As you can see, you'll need to setup the configuration object to include your CBT username and authorization key, which can be found in our [API](https://crossbrowsertesting.com/apidocs/v3/) as well as on the [Selenium dashboard](https://app.crossbrowsertesting.com/selenium/run).
+
+## Tests
 
 Finally, we'll create a 'tests' directory where all of our actual test scripts will reside. While in your current directory, create a folder called 'tests.' Within it, create a file called first_test.js and copy to following code:
 
@@ -130,6 +136,8 @@ module.exports = {
 ```
 
 If you installed cbt_tunnels earlier, this beforeEach and afterEach functions should work fine. If you'd like to run them before each suite of tests, just change these to general 'before' and 'after' functions. We need to make one more change to our nightwatch.json file. Remember that globals path from before? Now we need to have it point to the path of this 'globals.js' file. Once that's been completed, you're good to go. Cbt_tunnels will start before and after each test, and you can test pages behind your firewall or proxy across all of CBT's OS/Device/Browser combinations. 
+
+If you have any trouble establishing a local connection or would like to know more about how it works, we have a separate repository for cbt_tunnels [which can be found here](https://github.com/crossbrowsertesting/cbt-tunnel-nodejs). 
 
 ## Parallel Testing
 
@@ -217,6 +225,4 @@ This method will run each test sequentially, but with all environments at once. 
 
 This method will run all test files in your test directory in parallel for the specified configuration. This is subject to the limit imposed in "test_workers," so be sure to raise or lower that number accordingly. The command to launch this type of parallel test is:
 
-`nightwatch`
-
-If you have any trouble establishing a local connection or would like to know more about how it works, we have a separate repository for cbt_tunnels [which can be found here](https://github.com/crossbrowsertesting/cbt-tunnel-nodejs). 
+`nightwatch -c nightwatch_parallel.json --env chrome`
