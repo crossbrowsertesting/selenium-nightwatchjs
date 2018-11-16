@@ -1,5 +1,13 @@
 # Getting started with Nightwatch.JS and CrossBrowserTesting
 
+* [Introduction](#introduction)
+* [Configuration](#configuration)
+* [Tests](#tests)
+* [Local Connection Usage](#local-connection-usage)
+* [Parallel Testing](#parallel-testing)
+  * [Parallel Browsers](#parallel-browsers)
+  * [Parallel Test Files](#parallel-test-files)
+
 [Nightwatch.JS](http://nightwatchjs.org/) provides a powerful commandline tool that allows you to run end-to-end [Selenium](http://www.seleniumhq.org/) tests with Javascripts language bindings, all the while avoiding asynchronous commands and racing conditions. To get started, you'll need NPM. It comes with Node, and you can find setup instructions for the [whole package here](https://nodejs.org/en/). Once you have NPM, create a directory where you'd like your test projects to be stored. Navigate to that directory. From there, we'll initialize it as a Node Package by using the following:
 
 `user$ npm init`
