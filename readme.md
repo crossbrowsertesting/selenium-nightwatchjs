@@ -89,9 +89,9 @@ Back up to 'tests' parent directory, and run the following command:
 
 `user$ nightwatch`
 
-Head over to CBT's dashboard, and you should see a test starting up on a Windows 7x64 / Internet Explorer 10 configuration. We can start adding more tests to tests to the 'tests' directory, and Nightwatch will take care of the rest. Be sure to have a look at [Nightwatch's API](http://nightwatchjs.org/api) to ensure you're making use of their best practices. If at any point, you have trouble getting your tests running with us, don't hesitate to [get in touch](mailto: support@crossbrowsertesting.com). We're always happy to help. 
+Head over to CBT's dashboard, and you should see a test starting up on a Windows 7x64 / Internet Explorer 10 configuration. We can start adding more tests to tests to the 'tests' directory, and Nightwatch will take care of the rest. Be sure to have a look at [Nightwatch's API](http://nightwatchjs.org/api) to ensure you're making use of their best practices. If at any point, you have trouble getting your tests running with us, don't hesitate to [get in touch](mailto:support@crossbrowsertesting.com). We're always happy to help. 
 
-##Local Connection Usage
+## Local Connection Usage
 
 If you're interested in testing behind your firewall, CBT definitely supports that. We'll just need to make a few changes to how Nightwatch starts tests. Before each test, we'll start a tunnel, and we'll stop it afterward. Alternatively, you can make a few small changes to make cbt_tunnels start before each suite. We'll cover that as well. 
 
@@ -122,5 +122,93 @@ module.exports = {
 ```
 
 If you installed cbt_tunnels earlier, this beforeEach and afterEach functions should work fine. If you'd like to run them before each suite of tests, just change these to general 'before' and 'after' functions. We need to make one more change to our nightwatch.json file. Remember that globals path from before? Now we need to have it point to the path of this 'globals.js' file. Once that's been completed, you're good to go. Cbt_tunnels will start before and after each test, and you can test pages behind your firewall or proxy across all of CBT's OS/Device/Browser combinations. 
+
+## Parallel Testing
+
+Nightwatch offers two types of easy-to-configure parallel testing. Both methods are described below and use the following configuration file (nightwatch_parallel.json):
+
+```
+{
+  "src_folders" : ["tests"],
+  "output_folder" : "reports",
+  "custom_commands_path" : "",
+  "custom_assertions_path" : "",
+  "page_objects_path" : "",
+  "globals_path" : "",
+
+  "selenium" : {
+    "start_process" : false,
+    "server_path" : "",
+    "log_path" : "",
+    "port" : 4444
+  },
+
+   "test_workers": {
+    "enabled": true,
+    "workers": 2
+   },
+
+  "test_settings" : {
+    "default" : {
+      "launch_url" : "<launch_url_of_choice>",
+      "selenium_port"  : 80,
+      "selenium_host"  : "hub.crossbrowsertesting.com",
+      "silent": true,
+      "screenshots" : {
+        "enabled" : false,
+        "path" : ""
+      },
+      "username": "<your_cbt_username>",
+      "access_key": "<your_cbt_authkey>",
+      "desiredCapabilities": {
+        "browserName": "Internet Explorer",
+        "version": "10",
+        "build": "1.0",
+        "name": "NightwatchJSExample",
+        "platform" : "Windows 7 64-bit",
+        "screen_resolution" : "1024x768"
+      }
+    },
+
+    "chrome" : {
+      "desiredCapabilities": {
+        "browserName": "Chrome",
+        "version": "69",
+        "build": "1.0",
+        "name": "NightwatchJSExample",
+        "platform" : "Windows 10",
+        "screen_resolution" : "1024x768"
+      }
+    },
+
+    "safari" : {
+      "desiredCapabilities": {
+        "browserName": "Safari",
+        "version": "11",
+        "build": "1.0",
+        "name": "NightwatchJSExample",
+        "platform" : "Mac OSX 10.13",
+        "screen_resolution" : "1024x768"
+      }
+    }
+  }
+}
+```
+
+Note how the different browsers are specified as entries in the test_settings list. These entries are referred to as "environments." All environments will inherit everything set in the default environment unless you overwrite it in that environment's entry (a good example is the username and authkey. You only have to put those in default. The other ones will have that set automatically).
+
+### Parallel Browsers
+
+This method will run each test sequentially, but with all environments at once. So if you have 3 environments configured and three tests in your test folder, this method will result in Nightwatch running three selenium tests that are test 1 with each different configuration. Once those finish, it will launch 3 tests for test 2 with each config, and so on. The syntax for launching tests this way is:
+
+`nightwatch -c nightwatch_parallel.json --env default,chrome,safari`
+
+`-c nightwatch_parallel.json` specifices the configuration file to use and the arguments after `--env` are how to specify which configurations you want to run. By default, Nightwatch will launch as many tests as you have configurations specified in your command. If you'd like to limit the number of parallels, you can change the number labeled "workers" in the "test_workers" section of the configuration file.
+
+### Parallel Test Files
+
+This method will run all test files in your test directory in parallel for the specified configuration. This is subject to the limit imposed in "test_workers," so be sure to raise or lower that number accordingly. The command to launch this type of parallel test is:
+
+`nightwatch`
 
 If you have any trouble establishing a local connection or would like to know more about how it works, we have a separate repository for cbt_tunnels [which can be found here](https://github.com/crossbrowsertesting/cbt-tunnel-nodejs). 

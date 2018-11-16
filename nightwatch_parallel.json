@@ -1,0 +1,65 @@
+{
+  "src_folders" : ["tests"],
+  "output_folder" : "reports",
+  "custom_commands_path" : "",
+  "custom_assertions_path" : "",
+  "page_objects_path" : "",
+  "globals_path" : "",
+
+  "selenium" : {
+    "start_process" : false,
+    "server_path" : "",
+    "log_path" : "",
+    "port" : 4444
+  },
+
+   "test_workers": {
+    "enabled": true,
+    "workers": 2
+   },
+
+  "test_settings" : {
+    "default" : {
+      "launch_url" : "<launch_url_of_choice>",
+      "selenium_port"  : 80,
+      "selenium_host"  : "hub.crossbrowsertesting.com",
+      "silent": true,
+      "screenshots" : {
+        "enabled" : false,
+        "path" : ""
+      },
+      "username": "<your_cbt_username>",
+      "access_key": "<your_cbt_authkey>",
+      "desiredCapabilities": {
+        "browserName": "Internet Explorer",
+        "version": "10",
+        "build": "1.0",
+        "name": "NightwatchJSExample",
+        "platform" : "Windows 7 64-bit",
+        "screen_resolution" : "1024x768"
+      }
+    },
+
+    "chrome" : {
+      "desiredCapabilities": {
+        "browserName": "Chrome",
+        "version": "69",
+        "build": "1.0",
+        "name": "NightwatchJSExample",
+        "platform" : "Windows 10",
+        "screen_resolution" : "1024x768"
+      }
+    },
+
+    "safari" : {
+      "desiredCapabilities": {
+        "browserName": "Safari",
+        "version": "11",
+        "build": "1.0",
+        "name": "NightwatchJSExample",
+        "platform" : "Mac OSX 10.13",
+        "screen_resolution" : "1024x768"
+      }
+    }
+  }
+}
