@@ -7,6 +7,7 @@
 * [Parallel Testing](#parallel-testing)
   * [Parallel Browsers](#parallel-browsers)
   * [Parallel Test Files](#parallel-test-files)
+  * [Parallel Browsers and Test Files](#parallel-browsers-and-test-files)
 
 ## Introduction
 
@@ -229,4 +230,4 @@ This method will run all test files in your test directory in parallel for the s
 
 ### Parallel Browsers and Test Files
 
-This isn't something that Nightwatch currently allows. In order to get this working you need to launch Nightwatch for each environment you want to use. There's a helper file in this repo that can do that. You can run it with `node parallel.js`.
+This isn't something that Nightwatch currently allows. In order to get this working you need to launch a separate Nightwatch process for each environment you want to use. The file `parallel.js` in this repo that can do that-- it will start a local connection, go through and launch a process for each environment in your configuration file, and close the local connection automatically when all tests are complete. This is the automated equivalent of opening different terminal windows and launching tests as specified in the "Parallel Test Files" section. You can run it with `node parallel.js`. Keep in mind that this will run a process for each environment in your config file and each will use the "workers" value as its parallel limit. So if you have four environments defined and have "workers" set to 5, it will run 20 tests in parallel!
