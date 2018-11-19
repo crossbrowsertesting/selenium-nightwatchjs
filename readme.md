@@ -226,3 +226,7 @@ This method will run each test sequentially, but with all environments at once. 
 This method will run all test files in your test directory in parallel for the specified configuration. This is subject to the limit imposed in "test_workers," so be sure to raise or lower that number accordingly. The command to launch this type of parallel test is:
 
 `nightwatch -c nightwatch_parallel.json --env chrome`
+
+### Parallel Browsers and Test Files
+
+This isn't something that Nightwatch currently allows. In order to get this working you need to launch Nightwatch for each environment you want to use. There's a helper file in this repo that can do that. You can run it with `node parallel.js`.
