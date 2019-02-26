@@ -33,19 +33,7 @@ Next, we need to create JSON object that Nightwatch will point to when deciding 
   "custom_commands_path" : "",
   "custom_assertions_path" : "",
   "page_objects_path" : "",
-  "globals_path" : "", 				// can leave this blank for now. we'll use it later for local connection setup.
-
-  "selenium" : {
-    "start_process" : false,
-    "server_path" : "",
-    "log_path" : "",
-    "host" : "127.0.0.1",
-    "port" : 4444,
-    "cli_args" : {
-      "webdriver.chrome.driver" : "",
-      "webdriver.ie.driver" : ""
-    }
-  },
+  "globals_path" : "", 				// can leave this blank for now. we'll use it later for local connection setup
 
   "test_settings" : {
     "default" : {
@@ -152,13 +140,6 @@ Nightwatch offers two types of easy-to-configure parallel testing. Both methods 
   "custom_assertions_path" : "",
   "page_objects_path" : "",
   "globals_path" : "",
-
-  "selenium" : {
-    "start_process" : false,
-    "server_path" : "",
-    "log_path" : "",
-    "port" : 4444
-  },
 
    "test_workers": {
     "enabled": true,
