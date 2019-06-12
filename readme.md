@@ -55,7 +55,7 @@ Next, we need to create JSON object that Nightwatch will point to when deciding 
         "javascriptEnabled": "1",
         "name": "NightwatchJSExample",
         "platform" : "Windows 7 64-bit",
-        "record_network" : "true",
+        "record_network" : "false",
         "record_video" : "true",
         "screen_resolution" : "1024x768"
       }
@@ -92,11 +92,11 @@ Back up to 'tests' parent directory, and run the following command:
 
 `user$ nightwatch`
 
-Head over to CBT's dashboard, and you should see a test starting up on a Windows 7x64 / Internet Explorer 10 configuration. We can start adding more tests to tests to the 'tests' directory, and Nightwatch will take care of the rest. Be sure to have a look at [Nightwatch's API](http://nightwatchjs.org/api) to ensure you're making use of their best practices. If at any point, you have trouble getting your tests running with us, don't hesitate to [get in touch](mailto:support@crossbrowsertesting.com). We're always happy to help. 
+Head over to CBT's dashboard, and you should see a test starting up on a Windows 7x64 / Internet Explorer 10 configuration. We can start adding more tests to tests to the 'tests' directory, and Nightwatch will take care of the rest. Be sure to have a look at [Nightwatch's API](http://nightwatchjs.org/api) to ensure you're making use of their best practices. If at any point, you have trouble getting your tests running with us, don't hesitate to [get in touch](mailto:support@crossbrowsertesting.com). We're always happy to help.
 
 ## Local Connection Usage
 
-If you're interested in testing behind your firewall, CBT definitely supports that. We'll just need to make a few changes to how Nightwatch starts tests. Before each test, we'll start a tunnel, and we'll stop it afterward. Alternatively, you can make a few small changes to make cbt_tunnels start before each suite. We'll cover that as well. 
+If you're interested in testing behind your firewall, CBT definitely supports that. We'll just need to make a few changes to how Nightwatch starts tests. Before each test, we'll start a tunnel, and we'll stop it afterward. Alternatively, you can make a few small changes to make cbt_tunnels start before each suite. We'll cover that as well.
 
 Within your current directory, create a file called 'globals.js'. In this file, copy the following code:
 
@@ -124,9 +124,9 @@ module.exports = {
 }
 ```
 
-If you installed cbt_tunnels earlier, this beforeEach and afterEach functions should work fine. If you'd like to run them before each suite of tests, just change these to general 'before' and 'after' functions. We need to make one more change to our nightwatch.json file. Remember that globals path from before? Now we need to have it point to the path of this 'globals.js' file. Once that's been completed, you're good to go. Cbt_tunnels will start before and after each test, and you can test pages behind your firewall or proxy across all of CBT's OS/Device/Browser combinations. 
+If you installed cbt_tunnels earlier, this beforeEach and afterEach functions should work fine. If you'd like to run them before each suite of tests, just change these to general 'before' and 'after' functions. We need to make one more change to our nightwatch.json file. Remember that globals path from before? Now we need to have it point to the path of this 'globals.js' file. Once that's been completed, you're good to go. Cbt_tunnels will start before and after each test, and you can test pages behind your firewall or proxy across all of CBT's OS/Device/Browser combinations.
 
-If you have any trouble establishing a local connection or would like to know more about how it works, we have a separate repository for cbt_tunnels [which can be found here](https://github.com/crossbrowsertesting/cbt-tunnel-nodejs). 
+If you have any trouble establishing a local connection or would like to know more about how it works, we have a separate repository for cbt_tunnels [which can be found here](https://github.com/crossbrowsertesting/cbt-tunnel-nodejs).
 
 ## Parallel Testing
 
