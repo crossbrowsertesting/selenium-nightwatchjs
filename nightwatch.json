@@ -38,7 +38,7 @@
                "javascriptEnabled": "1",
                "name": "NightwatchJSExample",
                "platform" : "Windows 7 64-bit",
-               "record_network" : "true",
+               "record_network" : "false",
                "record_video" : "true",
                "screen_resolution" : "1024x768"
            }
@@ -55,7 +55,7 @@
                "javascriptEnabled": "1",
                "name": "NightwatchJSExample",
                "platform" : "Windows 10",
-               "record_network" : "true",
+               "record_network" : "false",
                "record_video" : "true",
                "screen_resolution" : "1024x768"
            }
@@ -71,7 +71,7 @@
                "javascriptEnabled": "1",
                "name": "NightwatchJSExample",
                "platform" : "Windows 10",
-               "record_network" : "true",
+               "record_network" : "false",
                "record_video" : "true",
                "screen_resolution" : "1024x768"
            }
@@ -87,7 +87,7 @@
                "javascriptEnabled": "1",
                "name": "NightwatchJSExample",
                "platform" : "Windows 10",
-               "record_network" : "true",
+               "record_network" : "false",
                "record_video" : "true",
                "screen_resolution" : "1024x768"
            }
