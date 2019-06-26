@@ -6,18 +6,6 @@
   "page_objects_path" : "",
   "globals_path" : "",
 
-  "selenium" : {
-    "start_process" : false,
-    "server_path" : "",
-    "log_path" : "",
-    "port" : 4444
-  },
-
-   "test_workers": {
-    "enabled": true,
-    "workers": 5
-   },
-
    "test_settings" : {
        "default" : {
            "launch_url" : "http://crossbrowsertesting.github.io/todo-app.html",
@@ -32,64 +20,15 @@
            "access_key": "yourauthkey",
            "desiredCapabilities": {
                "acceptSslCerts": "1",
-               "browserName": "Internet Explorer",
-               "version": "10",
-               "build": "1.0",
-               "javascriptEnabled": "1",
-               "name": "NightwatchJSExample",
-               "platform" : "Windows 7 64-bit",
-               "record_network" : "false",
-               "record_video" : "true",
-               "screen_resolution" : "1024x768"
-           }
-       },
-
-       "edge" : {
-           "selenium_port"  : 80,
-           "selenium_host"  : "hub.crossbrowsertesting.com",
-           "desiredCapabilities": {
-               "acceptSslCerts": "1",
-               "browserName": "microsoft edge",
-               "version": "17",
-               "build": "1.0",
-               "javascriptEnabled": "1",
-               "name": "NightwatchJSExample",
-               "platform" : "Windows 10",
-               "record_network" : "false",
-               "record_video" : "true",
-               "screen_resolution" : "1024x768"
-           }
-       },
-       "ie" : {
-           "selenium_port"  : 80,
-           "selenium_host"  : "hub.crossbrowsertesting.com",
-           "desiredCapabilities": {
-               "acceptSslCerts": "1",
-               "browserName": "internet explorer",
-               "version": "11",
-               "build": "1.0",
-               "javascriptEnabled": "1",
-               "name": "NightwatchJSExample",
-               "platform" : "Windows 10",
-               "record_network" : "false",
-               "record_video" : "true",
-               "screen_resolution" : "1024x768"
-           }
-       },
-       "chrome" : {
-           "selenium_port"  : 80,
-           "selenium_host"  : "hub.crossbrowsertesting.com",
-           "desiredCapabilities": {
-               "acceptSslCerts": "1",
                "browserName": "Chrome",
-               "version": "69",
+               "version": "75",
                "build": "1.0",
                "javascriptEnabled": "1",
                "name": "NightwatchJSExample",
                "platform" : "Windows 10",
                "record_network" : "false",
                "record_video" : "true",
-               "screen_resolution" : "1024x768"
+               "screen_resolution" : "1366x768"
            }
        }
    }
