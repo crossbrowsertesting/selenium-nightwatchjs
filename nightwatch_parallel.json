@@ -6,13 +6,6 @@
   "page_objects_path" : "",
   "globals_path" : "",
 
-  "selenium" : {
-    "start_process" : false,
-    "server_path" : "",
-    "log_path" : "",
-    "port" : 4444
-  },
-
    "test_workers": {
     "enabled": true,
     "workers": 2
@@ -36,29 +29,29 @@
         "build": "1.0",
         "name": "NightwatchJSExample",
         "platform" : "Windows 7 64-bit",
-        "screen_resolution" : "1024x768"
+        "screen_resolution" : "1366x768"
       }
     },
 
     "chrome" : {
       "desiredCapabilities": {
         "browserName": "Chrome",
-        "version": "69",
+        "version": "75",
         "build": "1.0",
         "name": "NightwatchJSExample",
         "platform" : "Windows 10",
-        "screen_resolution" : "1024x768"
+        "screen_resolution" : "1366x768"
       }
     },
 
     "safari" : {
       "desiredCapabilities": {
         "browserName": "Safari",
-        "version": "11",
+        "version": "12",
         "build": "1.0",
         "name": "NightwatchJSExample",
-        "platform" : "Mac OSX 10.13",
-        "screen_resolution" : "1024x768"
+        "platform" : "Mac OSX 10.14",
+        "screen_resolution" : "1366x768"
       }
     }
   }
